@@ -1,0 +1,1 @@
+docker run -it -v /`pwd`://managePass -p 1337:1337 --name manage-pass manage-pass

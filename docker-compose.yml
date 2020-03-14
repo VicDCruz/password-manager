@@ -1,0 +1,32 @@
+version: "3.7"
+
+services:
+  db:
+    image: mongo:3.2.11
+    restart: always
+    # environment:
+    #   MONGO_INITDB_ROOT_USERNAME: root
+    #   MONGO_INITDB_ROOT_PASSWORD: root
+    ports:
+      - "27017:27017"
+    volumes:
+      - ./mongo-backup:/mongo-backup
+    working_dir: /mongo-backup
+    container_name: mongo
+  web:
+    image: manage-pass
+    container_name: front
+    ports:
+      - "1337:1337"
+    volumes:
+      - ./web:/web
+      - /web/node_modules
+      - ./scripts:/scripts
+      - ./mongo-backup:/mongo-backup
+    environment:
+      - NODE_ENV=development
+      - COMPOSE_CONVERT_WINDOWS_PATHS=1
+      # Para Windows
+      # Ref: https://mherman.org/blog/dockerizing-a-react-app/
+      - CHOKIDAR_USEPOLLING=true
+    # entrypoint: tail -f /dev/null

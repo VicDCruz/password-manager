@@ -1,0 +1,2 @@
+echo Exportando users... && mongoexport --db=hack --collection=users --out=/mongo-backup/users.json
+echo Exportando passwords... && mongoexport --db=hack --collection=passwords --out=/mongo-backup/passwords.json
