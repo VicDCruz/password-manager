@@ -24,7 +24,7 @@
     "lint": "./node_modules/eslint/bin/eslint.js . --max-warnings=0 --report-unused-disable-directives && echo '✔  Your .js files look good.'",
     "custom-tests": "echo \"(No other custom tests yet.)\" && echo",
     "dev1": "export NODE_ENV=development && nodemon --ignore 'tmp/*' app.js && exit 0",
-    "dev": "./../scripts/initial-setup.sh && cd /web && sails lift"
+    "dev": "./../scripts/initial-setup.sh && cd /web && sails lift",
   },
   "main": "app.js",
   "repository": {

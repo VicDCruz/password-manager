@@ -29,4 +29,4 @@ services:
       # Para Windows
       # Ref: https://mherman.org/blog/dockerizing-a-react-app/
       - CHOKIDAR_USEPOLLING=true
-    # entrypoint: tail -f /dev/null
+    entrypoint: tail -f /dev/null
